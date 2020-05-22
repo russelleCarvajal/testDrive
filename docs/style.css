@@ -1,0 +1,96 @@
+
+/* 
+*   Custom CSS-style adhering to the current (June 2018) version 
+*   of the PureCloud App Foundry Style Guide
+*       Found at: https://developer.mypurecloud.com/partners/
+*/
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+iframe{
+    width: 100%;
+    border: none; 
+    height: 100vh;
+} 
+
+.header{
+    margin-bottom: 2px;
+    height: 4%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#5E636D;
+  }
+
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color:#FF4F1F;
+    color: white;
+    text-decoration: none;
+  }
+
+  li a:focus {
+    color: white;
+    text-decoration: none;
+  }
+
+#open-chat {  
+  float: right;
+}
+
+#burger-menu {  
+  float: left;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #FFF;
+  overflow-x: hidden;
+  transition: 0.5s;  
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #09090B;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: fff;
+  width: 100%;
+  background-color: #FF4F1F;
+
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  /* right: 25px; */
+  font-size: 1.2rem;
+  float: right;
+}
+

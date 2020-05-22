@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Test Drive Site</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://sdk-cdn.mypurecloud.com/javascript/29.1.0/purecloud-platform-client-v2.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+        <script src="https://sdk-cdn.mypurecloud.com/client-apps/1.3.0/purecloud-client-app-sdk.js"></script>
+        <link rel="stylesheet" href="style.css">
+
+        
+    </head>
+    <body>
+                              
+        <div id="main">
+            <ul class="header">
+                <li><a id="burger-menu" href="#">☰</a></li>
+                <li><a id="open-chat" href="#">Open Chat</a></li>
+            </ul>
+            <div class="test-drive-frame">
+                <!-- <iframe src=http://testdrive.genesys.com/></iframe> -->
+                <iframe src=https://help.mypurecloud.com/articles/get-started-administering-purecloud/></iframe>
+            </div>        
+        </div>
+
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" id="close-menu">×</a>
+            <a href="#" id="create-user">Create New User</a>
+            <a href="#" id="delete-user">Delete User</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </body>
+    
+    <script id="purecloud-webchat-js" type="text/javascript" src="https://apps.mypurecloud.com/webchat/jsapi-v1.js"
+    region="us-east-1" org-guid="03671e89-0883-48b0-8284-cd5260c38745" deployment-key="98f81f99-fabe-4cd3-82eb-c590075bc5f0">
+    </script>
+
+    <script type="module">
+        import * as platformApi from './platformApi.js';
+
+        // log in to purecloud and get user information
+        $(document).ready(function(){
+            platformApi.oAuthlogIn();
+        })
+
+        // get value before closing create new user modal 
+        $("#close").click(function(){
+            let usr = $("#usr").val()
+        });
+
+        // open chat window
+        $("#open-chat").click(function(){platformApi.openChat()})
+
+        // create a user
+        $("#create-user").click(function(){platformApi.createUSer()})
+
+        // delete the user
+        $("#delete-user").click(function(){platformApi.deleteUSer()})
+          
+        $("#burger-menu").click(function(){
+            document.getElementById("mySidebar").style.width = "15%";
+            document.getElementById("main").style.marginLeft = "15%";
+        })
+
+        $("#close-menu").click(function(){
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        })
+    </script>
+</html>
